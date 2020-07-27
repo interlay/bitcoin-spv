@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LGPL-3.0-only
+
 pragma solidity ^0.6.12;
 
 /** @title ValidateSPV*/
@@ -78,7 +80,7 @@ library ValidateSPV {
     /// @notice                     Compares the hash of each header to the prevHash in the next header
     /// @param _headers             Raw byte array of header chain
     /// @return _totalDifficulty    The total accumulated difficulty of the header chain, or an error code
-    function validateHeaderChain(bytes memory _headers) internal view returns (uint256 _totalDifficulty) {
+    function validateHeaderChain(bytes memory _headers) internal pure returns (uint256 _totalDifficulty) {
 
         // Check header chain length
         if (_headers.length % 80 != 0) {return ERR_BAD_LENGTH;}

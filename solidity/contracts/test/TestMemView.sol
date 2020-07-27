@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: LGPL-3.0-only
+
 pragma solidity ^0.6.12;
 
 import {TypedMemView} from "../TypedMemView.sol";
@@ -98,7 +100,7 @@ contract TestMemView {
         );
     }
 
-    function slicing() public {
+    function slicing() public pure {
         // 76 bytes - 3 words
 
         // solium-disable-next-line max-len
