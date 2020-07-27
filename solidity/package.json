@@ -1,6 +1,6 @@
 {
-  "name": "@summa-tx/bitcoin-spv-sol",
-  "version": "3.1.0",
+  "name": "@interlay/bitcoin-spv-sol",
+  "version": "3.2.0",
   "description": "bitcoin SPV proofs in Solidity",
   "scripts": {
     "compile": "truffle compile",
@@ -9,7 +9,7 @@
     "lint": "solium -d contracts/ && eslint ./test",
     "lint:fix": "solium --fix -d contracts/ && eslint --fix ./test"
   },
-  "author": "",
+  "author": "Summa",
   "license": "LGPLv3",
   "devDependencies": {
     "bn.js": "^5.0.0",

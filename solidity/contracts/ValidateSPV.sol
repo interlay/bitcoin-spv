@@ -1,4 +1,4 @@
-pragma solidity ^0.5.10;
+pragma solidity ^0.6.12;
 
 /** @title ValidateSPV*/
 /** @author Summa (https://summa.one) */
@@ -74,10 +74,10 @@ library ValidateSPV {
         return abi.encodePacked(_version, _vin, _vout, _locktime).hash256();
     }
 
-    /// @notice             Checks validity of header chain
-    /// @notice             Compares the hash of each header to the prevHash in the next header
-    /// @param _headers     Raw byte array of header chain
-    /// @return             The total accumulated difficulty of the header chain, or an error code
+    /// @notice                     Checks validity of header chain
+    /// @notice                     Compares the hash of each header to the prevHash in the next header
+    /// @param _headers             Raw byte array of header chain
+    /// @return _totalDifficulty    The total accumulated difficulty of the header chain, or an error code
     function validateHeaderChain(bytes memory _headers) internal view returns (uint256 _totalDifficulty) {
 
         // Check header chain length
@@ -102,7 +102,7 @@ library ValidateSPV {
             uint256 _target = _header.extractTarget();
 
             // Require that the header has sufficient work
-            _digest = _header.hash256View();
+            _digest = _header.hash256();
             if(uint256(_digest).reverseUint256() > _target) {
                 return ERR_LOW_WORK;
             }

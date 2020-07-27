@@ -1,4 +1,4 @@
-pragma solidity ^0.5.10;
+pragma solidity ^0.6.12;
 
 import {SafeMath} from "./SafeMath.sol";
 
@@ -45,7 +45,7 @@ library TypedMemView {
     /// @notice          Changes the endianness of a uint256
     /// @dev             https://graphics.stanford.edu/~seander/bithacks.html#ReverseParallel
     /// @param _b        The unsigned integer to reverse
-    /// @return          The reversed value
+    /// @return v        The reversed value
     function reverseUint256(uint256 _b) private pure returns (uint256 v) {
         v = _b;
 
